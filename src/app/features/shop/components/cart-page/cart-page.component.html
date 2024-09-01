@@ -1,0 +1,225 @@
+<div class="contenido-pricipal">
+    <div class="tittle">
+        <h1>Mis productos</h1>
+    </div>
+    <mat-stepper linear #stepper>
+        <mat-step>
+          <form>
+            <ng-template matStepLabel>Comprar</ng-template>
+            <!-- Contenido del paso # 1 -->
+            <div class="content-step1">                    
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Productos</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of mProducts">
+                            <td scope="row">
+                                <div class="mflex-row">
+                                    <div>
+                                        <img [src]="p.img" alt="">
+                                    </div>
+                                    <div class="mflex-column mflex-space-between product-t">
+                                        <h3><strong>{{p.name}}</strong></h3>
+                                        <!-- <h4>Color: #</h4> -->
+                                        <button mat-stroked-button color="warn"> <mat-icon>delete</mat-icon> Eliminar</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>                                                                  
+                                <div class="mflex-row">
+                                    <div class="contador">
+                                        <button mat-icon-button (click)="decrementProduct(p)" [disabled]="p.amount <= 0"><mat-icon>remove</mat-icon></button>
+                                        <span>{{p.amount}}</span>    
+                                        <button mat-icon-button (click)="incrementProduct(p)"><mat-icon>add</mat-icon></button>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>${{p.price}}</td>
+                            <td>${{ (p.price * p.amount) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <button mat-icon-button (click)="open()"><mat-icon>add</mat-icon> asd</button>
+                <div class="mcard">
+                    <h2>Resumen</h2>
+                    <mat-radio-group
+                        aria-labelledby="example-radio-group-label"
+                        class="example-radio-group">
+                        <div *ngFor="let s of seasons" style="width: 100%;">
+                            <div class="example-radio-button">
+                                <mat-radio-button [value]="s.content" (change)="radioBtnPress(s)">
+                                    {{s.content}} 
+                                </mat-radio-button>
+                                <span>{{s.precio}}</span>
+                            </div>
+                            <mat-divider></mat-divider>                                                        
+                        </div>
+                    </mat-radio-group>
+                    <div class="mflex-row-space-between">
+                        <p>Subtotal</p>
+                        <strong>${{total}}</strong>    
+                    </div>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div class="mflex-row-space-between">
+                        <strong>Total</strong>
+                        <strong>${{total + precioAdicional}}</strong>
+                    </div>
+                    <br>
+                    <div class="mflex-row-center">
+                        <button class="mbtn" mat-button matStepperNext>Revisar detalles</button>
+                    </div>
+                </div>
+            </div>
+
+          </form>
+        </mat-step>
+        <mat-step>
+          <form>
+            <ng-template matStepLabel>Revisar detalles</ng-template>
+            <div class="mflex-row">
+                <div class="mform">
+                    <div class="container">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nombres</mat-label>
+                            <mat-icon matPrefix>person</mat-icon>
+                            <input matInput id="name" type="text"/>
+                        </mat-form-field> 
+                        
+                        <div class="mflex-row mflex-space-between">                            
+                            <mat-form-field appearance="outline" style="width: 48%;">
+                                <mat-label>Apellidos</mat-label>
+                                <mat-icon matPrefix>person</mat-icon>
+                                <input matInput id="last_name" type="email"/>
+                            </mat-form-field> 
+                            <mat-form-field appearance="outline" style="width: 48%;">
+                                <mat-label>Número de teléfono</mat-label>
+                                <mat-icon matPrefix>call</mat-icon>
+                                <input matInput id="number" type="number"/>
+                            </mat-form-field> 
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <mat-icon matPrefix>mail</mat-icon>
+                            <input matInput id="email" type="email" placeholder="Ejemplo@gmail.com"/>
+                        </mat-form-field>
+                    </div>   
+                    <br>
+                    <div class="container">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Dirección</mat-label>
+                            <mat-icon matPrefix>home</mat-icon>
+                            <input matInput id="direccion" type="text"/>
+                        </mat-form-field> 
+                        <mat-form-field appearance="outline">
+                            <mat-label>País</mat-label>
+                            <mat-icon matPrefix>public</mat-icon>
+                            <input matInput id="pais" type="text"/>
+                        </mat-form-field> 
+                        <div class="mflex-row mflex-space-between">
+                            <mat-form-field appearance="outline" style="width: 48%;">
+                                <mat-label>Distrito</mat-label>
+                                <input matInput id="distrito" type="text"/>
+                            </mat-form-field> 
+                            <mat-form-field appearance="outline" style="width: 48%;">
+                                <mat-label>Código postal</mat-label>
+                                <input matInput id="cod_psotal" type="number"/>
+                            </mat-form-field>
+                        </div>
+                        
+                    </div>  
+                </div>
+                <div class="mform">
+                    <div class="container">
+                        <h2>Tu orden</h2>
+                        <div *ngFor="let p of mProducts" style="margin: 1%;">
+                            <div class="mflex-row" style="margin: 1%;">
+                                <img [src]="p.img" alt="">
+                                <div class="product-t" style="width: 100%;">
+                                    <h3 class="mflex-row mflex-space-between" ><strong>{{p.name}} </strong><strong> ${{p.amount*p.price}}</strong></h3>
+                                    <h3>Cantidad: <strong> {{p.amount}}</strong></h3>
+                                </div>
+                            </div>                            
+                            <mat-divider></mat-divider>
+                        </div>
+
+                        <div class="cupon">
+                            <mat-form-field appearance="outline" style="width: 100%;">
+                                <mat-label>Cupón</mat-label>
+                                <input matInput id="cod_cupon" type="text" placeholder="Cupón de descuento"/>
+                            </mat-form-field>
+                            <button mat-flat-button class="mbtn2">Aplicar</button>    
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="mflex-row mflex-space-between padding-content">
+                            <span>Envió</span>
+                            <span>$12312</span>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="mflex-row mflex-space-between padding-content">
+                            <span>Subtotal</span>
+                            <span>$12312</span>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="mflex-row mflex-space-between padding-content">
+                            <strong>Total</strong>
+                            <span>$12312</span>
+                        </div>
+                        <div class="mflex-row-center">                            
+                            <button class="mbtn" mat-button matStepperNext>Pagar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Pagar pedido</ng-template>
+          <div class="payment-container">
+            <!-- <h2>Pasarela de Pago</h2> -->
+          
+            <form>
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Número de Tarjeta</mat-label>
+                    <input matInput id="cardNumber" type="text" placeholder="---- ---- ---- ----"/>
+                </mat-form-field>
+
+              
+          
+                <div>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Fecha de Expiración</mat-label>
+                        <input matInput id="expiryDate" type="text" placeholder="MM/YY"/>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>CVV</mat-label>
+                        <input matInput id="cvv" type="text" placeholder="123"/>
+                    </mat-form-field>
+                
+                </div>
+              
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Nombre del Titular</mat-label>
+                    <input matInput id="cardholderName" type="text" placeholder="Nombre del Titular"/>
+                </mat-form-field>
+          
+                <div class="mflex-row-center">
+                    <button mat-button class="mbtn">Pagar</button>
+                </div>
+            </form>
+          </div>
+        </mat-step>
+    </mat-stepper>
+</div>
+
+<app-footer></app-footer>

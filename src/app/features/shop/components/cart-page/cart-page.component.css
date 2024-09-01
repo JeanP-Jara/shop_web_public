@@ -1,0 +1,159 @@
+.contenido-pricipal{
+    padding-left: 15%;
+    padding-right: 15%; 
+    padding-top: 5%;
+}
+
+.tittle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1{
+    font-size: 52px; 
+    line-height: 1;
+}
+
+.content-step1{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1%;
+}
+.mcard{
+    height: 350px;
+    min-width: 300px;
+    border: 1px solid #6C7275;
+    border-radius: 5px;
+    padding: 1%;
+    margin-left: 32px;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+
+.example-radio-button{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 1px solid #6C7275;
+    border-radius: 5px;*/
+    padding: 8px;
+    margin-bottom: 8px; 
+}
+
+.mflex-row-space-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mbtn {
+    width: 50%;
+    background: #141718;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mflex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mflex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.mflex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.mflex-space-between{    
+    justify-content: space-between;
+}
+
+.mflex-space-center{    
+    justify-content: center;
+}
+
+.product-t{
+    padding: 1%;
+}
+
+.contador{
+    border: 1px solid #6C7275;
+    border-radius: 5px; 
+}
+
+td{    
+    align-content: center;
+}
+
+img{
+    max-height: 130px;
+}
+
+.container{    
+    padding: 5% 5% 2% 5%;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #6C7275;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mform{
+    width: 49%;
+    margin: 1%;
+}
+
+.cupon{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin: 2%;
+}
+
+.mbtn2 {
+    height: 50px;
+    background: #141718;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.padding-content{
+    padding: 4%;
+}
+
+.payment-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #6C7275;
+    border-radius: 4px;
+  }
+  
+  .payment-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  
+  

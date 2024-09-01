@@ -1,0 +1,92 @@
+<div class="content">
+    <div class="tittle">
+        <h1>Creemos en la decoración sostenible. Nos apasiona la vida en casa.</h1>
+        <h3>
+            Contamos con muebles atemporales, con tejidos naturales, líneas curvas, multitud de espejos y diseño clásico, 
+            que se pueden incorporar a cualquier proyecto de decoración. Las piezas encantan por su sobriedad, para perdurar generaciones, 
+            fieles a las formas de cada época, con un toque del presente.
+        </h3>
+    </div>
+
+    <div class="banner2">
+        <div class="banner2-item1">
+          <img src="../../../../../assets/home/08-23-24-181430.png" alt="">
+        </div>
+      
+        <div class="banner2-item2-row">
+          <div class="banner2-item2">
+            <strong style="color: #377DFF;">VENTA HASTA 35% DE DESCUENTO</strong><br>
+            <h2><strong>CENTENARES de</strong></h2>
+            <h2> <strong> ¡Nuevos precios más bajos! </strong> </h2>       
+            <span>Es más asequible que nunca renovar con estilo</span>
+            <span>cada habitación de su hogar.</span>
+            <br>
+            <a class="mlink" href="">Comprar ahora →</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="flex-row justify-content-center contact-tittle">
+        <h1>Contactanos</h1>
+    </div>
+
+    <div class="flex-row justify-content-space-between">
+        <div class="mcard">
+            <mat-icon class="micon">storefront</mat-icon><br><br><br>
+            <h2><strong>LOCALES</strong></h2>
+            <h3>234 locales. Lima, Perú</h3>
+        </div>
+        <div class="mcard">
+            <mat-icon class="micon">call</mat-icon><br><br><br>
+            <h2><strong>Llamanos</strong></h2>
+            <h3><span>+51 234 567 890</span></h3>
+        </div>
+        <div class="mcard">
+            <mat-icon class="micon">mail</mat-icon><br><br><br>
+            <h2><strong>EMAIL</strong></h2>
+            <h3><span>hello@3legant.com</span></h3>
+        </div>        
+    </div>
+
+    <form class="mform">
+        <div class="item-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput placeholder="Nombre completo">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="ejemplo@gmail.com" [formControl]="email" required>
+                <mat-icon matSuffix>mail</mat-icon>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Autosize textarea</mat-label>
+                <textarea matInput
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="10"
+                          cdkAutosizeMaxRows="10"></textarea>
+            </mat-form-field>
+
+            <button type="submit" [disabled]="false">Enviar mensaje</button>
+        </div>
+        <div class="item-form maps">
+            <google-map height="350px"
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="moveMap($event)"
+                (mapMousemove)="move($event)">
+                <map-marker *ngIf="markerPosition.lat != 0"
+                    [position]="markerPosition"
+                    [options]="markerOptions">
+                </map-marker>
+            </google-map>
+        </div>
+    </form>
+
+</div>
+<app-footer></app-footer>

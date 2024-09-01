@@ -1,0 +1,162 @@
+.content{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 3.5%;
+}
+
+h1{
+    font-size: 72px; 
+    line-height: 1;
+}
+
+.tittle{
+    width: 80%;
+}
+
+.banner2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.banner2-item1{
+    width: 50%;
+}
+
+.banner2-item2{    
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner2-item2-row{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F3F5F7;
+}
+
+img{
+    max-height: 500px;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.justify-content-center{
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.justify-content-space-between{
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mcard{    
+    background-color: #F3F5F7;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-tittle{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.micon{
+    transform: scale(3);
+    padding-top: 12px;
+}
+
+.mform{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+button {
+    width: 50%;
+    padding: 0.5rem;
+    background: #141718;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.maps{
+    width:650px;
+}
+
+
+@media (max-width: 600px) {
+    .content{
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 3.5%;
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+    .banner2{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .banner2-item1{
+        width: 100%;
+    }
+    
+    .banner2-item2{    
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .banner2-item2-row{
+        width: 100%;
+        padding: 5%;
+    }
+
+    .flex-row{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mform{        
+        flex-direction: column;
+    }
+
+    .item-form{
+        width: 100%;
+    }    
+
+    .maps{
+        width: 100%;
+    }
+
+    
+}

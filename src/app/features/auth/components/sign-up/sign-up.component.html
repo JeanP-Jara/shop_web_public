@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <label for="email">Email</label><br>
+    <input type="email" placeholder="ejemplo@gmail.com" formControlName="email" id="email"><br>
+
+    <div *ngIf="email?.invalid">
+        <small *ngIf="email?.errors?.['required']">Email requerido</small>
+        <small *ngIf="email?.errors?.['email']">Email invalido</small>
+    </div>
+
+    <label for="email">Contraseña</label><br>
+    <input type="password"  formControlName="password" id="password"><br>
+
+    <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+
+</form>

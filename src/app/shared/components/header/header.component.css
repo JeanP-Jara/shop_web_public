@@ -1,0 +1,53 @@
+.example-container {
+    height: 100vh;
+  }
+  
+.example-sidenav {
+    width: 250px;
+}
+
+.menu-list2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list2 li {
+    padding: 16px;
+    cursor: pointer;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.main-content {
+    padding: 20px;
+}
+.menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.menu-list li {
+    padding: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+    .menu-list {
+        display: none;
+    }
+    .menu-icon {
+        display: inline-flex;
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+.mat-toolbar-example{
+    position: fixed;
+    z-index:10;
+}

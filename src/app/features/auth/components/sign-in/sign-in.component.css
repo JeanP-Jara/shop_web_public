@@ -1,0 +1,107 @@
+.contenedor{
+    display: flex;
+    flex-direction: row;    
+    height: 100vh; 
+}
+.logo{
+    width: 50%;
+    position: relative;
+}
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.formulario{
+    width: 50%;    
+    background: #f2f4f6;
+    position: relative;
+}
+
+form{    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+ 
+  
+small {
+    color: red;
+}
+  
+button {
+    width: 100%;
+    padding: 0.5rem;
+    background: #141718;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+button[disabled] {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+a:link {
+    color: #38CB89;
+}
+  
+a:visited {
+    color: #38CB89;
+}
+  
+a:focus,
+a:hover {
+    border-bottom: 1px solid;
+}
+  
+a:active {
+    color: #38CB89;
+}
+
+input {
+    appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #38CB89;
+	border-radius: .2em .2em 0 0;
+	padding: 5px;
+    background-color: #f2f4f6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 35px;
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .logo, .formulario {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    img, form {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+    }
+
+    form {
+        width: 60%;
+    }
+}

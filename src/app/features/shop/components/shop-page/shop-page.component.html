@@ -1,0 +1,90 @@
+<div class="content-banner">
+    <img src="../../../../../assets/shop/08-27-24-112344.png" alt="">
+</div>
+<div class="contenido-pricipal">
+    <div class="home">
+        <div>
+            <h1> <mat-icon>tune</mat-icon> <strong> Filtros</strong></h1>
+            <h3><strong>Categorias</strong></h3>
+
+            <section class="example-section">
+                <span class="example-list-section">
+                  <mat-checkbox class="example-margin"
+                                [checked]="allComplete"
+                                [color]="task.color"
+                                [indeterminate]="someComplete()"
+                                (change)="setAll($event.checked)">
+                    {{task.name}}
+                  </mat-checkbox>
+                </span>
+                <span class="example-list-section">
+                  <ul>
+                    <li *ngFor="let subtask of task.subtasks">
+                      <mat-checkbox [(ngModel)]="subtask.completed"
+                                    [color]="subtask.color"
+                                    (ngModelChange)="updateAllComplete()">
+                        {{subtask.name}}
+                      </mat-checkbox>
+                    </li>
+                  </ul>
+                </span>
+            </section>
+
+            <mat-divider></mat-divider>
+
+            <h3><strong>Precios</strong></h3>
+            <section class="example-section">
+                <span class="example-list-section">
+                  <mat-checkbox class="example-margin"
+                                [checked]="allComplete2"
+                                [color]="task2.color"
+                                [indeterminate]="someComplete2()"
+                                (change)="setAll2($event.checked)">
+                    {{task2.name}}
+                  </mat-checkbox>
+                </span>
+                <span class="example-list-section">
+                  <ul>
+                    <li *ngFor="let subtask of task2.subtasks">
+                      <mat-checkbox [(ngModel)]="subtask.completed"
+                                    [color]="subtask.color"
+                                    (ngModelChange)="updateAllComplete2()">
+                        {{subtask.name}}
+                      </mat-checkbox>
+                    </li>
+                  </ul>
+                </span>
+            </section>
+            
+        </div>
+        <div style="padding-left: 135px;">
+            <h1> <mat-icon>inventory_2</mat-icon> <strong> Productos</strong></h1>
+            <div class="mflex-row">
+                <div *ngFor="let p of productos" class="product">
+                    <div class="card-product-content">
+                    <div class="offer">
+                        <div>
+                          <span class="label-offer-new">NEW</span><br>
+                          <span class="label-offer-discount">-50%</span>
+                        </div>
+                        <button mat-mini-fab>
+                          <mat-icon>favorite</mat-icon>
+                        </button>
+                    </div>
+                    <button mat-flat-button class="btn-add-cart" (click)="addtocart(p)">Añadir al carrito</button>
+                    <img [src]="p.img" alt="">          
+                    </div>
+                    <div class="mflex-column">
+                    <div class="mflex-row"><mat-icon *ngFor="let i of generateStars(p.nestrellas)">star</mat-icon></div>
+                    <strong>{{p.name}}</strong><br>
+                    <strong>${{p.price}}</strong>
+                    </div>
+                </div>
+                </div>
+        </div>        
+    </div>
+    <div class="button-botton">
+        <button mat-stroked-button>Ver más</button>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,44 @@
+<mat-toolbar class="mat-toolbar-example">
+  <button mat-icon-button (click)="sidenav.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>3legant</span>
+  <span class="example-spacer"></span>
+  <ul class="menu-list">
+    <li [routerLink]="['/']">Inicio</li>
+    <li [routerLink]="['/shop']">Tienda</li> 
+    <!-- <li>Productos</li> -->
+    <li  [routerLink]="['/contact']">Contacto</li>    
+  </ul>
+
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button aria-label="icon-button">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="icon-button" [routerLink]="['/sign-in']">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="icon-button" [routerLink]="['/cart']">
+    <mat-icon [matBadge]="counter$ | async" matBadgeColor="warn">shopping_cart</mat-icon>
+  </button>
+
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="over" class="example-sidenav">
+      <ul class="menu-list2">
+        <li [routerLink]="['/']">Inicio</li>
+        <li [routerLink]="['/shop']">Tienda</li> 
+        <!-- <li>Productos</li> -->
+        <li  [routerLink]="['/contact']">Contacto</li>  
+      </ul>
+    </mat-sidenav>
+
+    <mat-sidenav-content >
+      
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+  
+  
